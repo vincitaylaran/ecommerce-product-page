@@ -44,4 +44,12 @@ body {
 p {
   font-size: 1rem;
 }
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
 </style>
