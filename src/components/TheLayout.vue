@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../variables.scss';
+@import '../scss/breakpoints.scss';
 
 #the-layout {
   padding: 28px 165px 132px;
