@@ -21,6 +21,12 @@
         src="../../assets/icon-close.svg"
         alt="close"
       />
+
+      <ul class="links__list">
+        <li v-for="link in links" v-bind:key="link">
+          {{ link }}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -31,6 +37,7 @@ export default {
   data: function () {
     return {
       isHidden: false,
+      links: ['collections', 'men', 'women', 'about', 'contact'],
     }
   },
   methods: {
@@ -46,6 +53,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../scss/colors.scss';
+
 #nav-bar {
   $nav-padding: 19px 24px 25px;
 
@@ -88,14 +97,25 @@ export default {
   }
 
   .links {
-    background: red;
+    background: $white;
 
     position: absolute;
     left: 0;
     top: 0;
     min-height: 100vh;
-    padding: $nav-padding;
+    padding: 25px;
     width: 250px;
+    color: $black;
+
+    &__list {
+      padding-top: 54px;
+      li {
+        font-weight: 700;
+        text-transform: capitalize;
+        padding-bottom: 20px;
+        font-size: 1.125rem;
+      }
+    }
   }
 }
 </style>
