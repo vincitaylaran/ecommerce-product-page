@@ -1,6 +1,5 @@
 <template>
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <TheLayout></TheLayout>
+  <TheLayout> </TheLayout>
 </template>
 
 <script>
