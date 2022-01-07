@@ -15,23 +15,27 @@
       <img class="avatar" src="../../assets/image-avatar.png" alt="avatar" />
     </div>
 
-    <div class="links" v-bind:class="{ hidden: isHidden }">
+    <div class="side-links" v-bind:class="{ hidden: isHidden }">
       <img
         v-on:click="toggleLinks"
         src="../../assets/icon-close.svg"
         alt="close"
       />
 
-      <ul class="links__list">
+      <ul class="side-links__list">
         <li v-for="link in links" v-bind:key="link">
           {{ link }}
         </li>
       </ul>
     </div>
+
+    <ShadedBackground v-bind:is-hidden="isHidden" />
   </div>
 </template>
 
 <script>
+import ShadedBackground from './ShadedBackground.vue'
+
 export default {
   name: 'NavBar',
   data: function () {
@@ -48,6 +52,9 @@ export default {
         this.isHidden = true
       }
     },
+  },
+  components: {
+    ShadedBackground,
   },
 }
 </script>
@@ -96,7 +103,7 @@ export default {
     display: none;
   }
 
-  .links {
+  .side-links {
     background: $white;
 
     position: absolute;
@@ -106,6 +113,7 @@ export default {
     padding: 25px;
     width: 250px;
     color: $black;
+    z-index: 2;
 
     &__list {
       padding-top: 54px;
