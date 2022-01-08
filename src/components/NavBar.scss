@@ -38,6 +38,9 @@
       margin-right: 16px;
     }
     .links {
+      @media (max-width: breakpoints.$breakpoint) {
+        display: none;
+      }
       display: flex;
       padding-left: 56px;
       text-transform: capitalize;
@@ -75,26 +78,22 @@
   }
 
   .right-container {
-    .icon-cart,
     .avatar {
       cursor: pointer;
-    }
-    .icon-cart {
-      margin-right: 22px;
-      @media (min-width: breakpoints.$breakpoint) {
-        margin-right: 46px;
-      }
     }
 
     .avatar {
       width: 24px;
       border: 2px solid transparent;
       border-radius: 50%;
+      margin-left: 22px;
+
       &:hover {
         border: 2px solid colors.$orange;
       }
       @media (min-width: breakpoints.$breakpoint) {
         width: 50px;
+        margin-left: 46px;
       }
     }
   }

@@ -20,7 +20,7 @@
     </div>
 
     <div class="right-container">
-      <img src="../../assets/icon-cart.svg" alt="cart" class="icon-cart" />
+      <CartIcon />
       <img class="avatar" src="../../assets/image-avatar.png" alt="avatar" />
     </div>
 
@@ -44,6 +44,7 @@
 
 <script>
 import ShadedBackground from './ShadedBackground.vue'
+import CartIcon from './CartIcon.vue'
 
 export default {
   name: 'NavBar',
@@ -60,6 +61,7 @@ export default {
   },
   components: {
     ShadedBackground,
+    CartIcon,
   },
 }
 </script>
