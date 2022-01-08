@@ -17,10 +17,6 @@
     padding: 0 0 38px;
   }
 
-  .avatar {
-    width: 24px;
-  }
-
   .logo {
     padding-bottom: 3px;
   }
@@ -79,8 +75,27 @@
   }
 
   .right-container {
-    img:first-child {
+    .icon-cart,
+    .avatar {
+      cursor: pointer;
+    }
+    .icon-cart {
       margin-right: 22px;
+      @media (min-width: breakpoints.$breakpoint) {
+        margin-right: 46px;
+      }
+    }
+
+    .avatar {
+      width: 24px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      &:hover {
+        border: 2px solid colors.$orange;
+      }
+      @media (min-width: breakpoints.$breakpoint) {
+        width: 50px;
+      }
     }
   }
 

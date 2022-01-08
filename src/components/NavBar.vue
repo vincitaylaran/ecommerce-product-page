@@ -20,7 +20,7 @@
     </div>
 
     <div class="right-container">
-      <img src="../../assets/icon-cart.svg" alt="cart" />
+      <img src="../../assets/icon-cart.svg" alt="cart" class="icon-cart" />
       <img class="avatar" src="../../assets/image-avatar.png" alt="avatar" />
     </div>
 
