@@ -13,8 +13,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import './scss/colors.scss';
 
 * {
   box-sizing: border-box;
@@ -40,5 +41,14 @@ li {
 
 ul {
   padding: 0;
+}
+
+button {
+  border: none;
+  background: $orange;
+  font-weight: 700;
+  color: $white;
+  border-radius: 10px;
+  font-size: 1rem;
 }
 </style>
