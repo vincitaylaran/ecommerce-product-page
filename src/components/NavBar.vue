@@ -1,67 +1,49 @@
 <template>
   <div id="nav-bar">
-    <div class="left-container">
-      <!-- This image/svg is only visible when viewing on mobile devices -->
-      <img
-        v-on:click="toggleLinks"
-        class="menu"
-        src="../../assets/icon-menu.svg"
-        alt="menu"
-      />
-      <img class="logo" src="../../assets/logo.svg" alt="logo" />
-      <ul class="links">
-        <li v-for="link in links" v-bind:key="link">
-          <a href=""
-            >{{ link }}
-            <div class="underline" />
-          </a>
-        </li>
-      </ul>
-    </div>
+    <NavBarLeftContainer
+      :links="links"
+      :is-hidden="isHidden"
+      @open-side-links="handleSideLinks"
+    />
 
     <div class="right-container">
       <CartIcon />
       <img class="avatar" src="../../assets/image-avatar.png" alt="avatar" />
     </div>
 
-    <!-- This element is hidden when viewing from devices wider than mobile phones -->
-    <div class="side-links" v-bind:class="{ hidden: !isHidden }">
-      <img
-        v-on:click="toggleLinks"
-        src="../../assets/icon-close.svg"
-        alt="close"
-      />
-
-      <ul class="side-links__list">
-        <li v-for="link in links" v-bind:key="link">
-          {{ link }}
-        </li>
-      </ul>
-    </div>
-    <ShadedBackground v-bind:is-hidden="!isHidden" />
+    <NavBarSideLinks
+      :is-hidden="isHidden"
+      :links="links"
+      @close-side-links="handleSideLinks"
+    />
+    <ShadedBackground :is-hidden="isHidden" />
   </div>
 </template>
 
 <script>
 import ShadedBackground from './ShadedBackground.vue'
 import CartIcon from './CartIcon.vue'
+import NavBarLeftContainer from './NavBarLeftContainer.vue'
+import NavBarSideLinks from './NavBarSideLinks.vue'
 
 export default {
   name: 'NavBar',
-  data: function () {
+  data() {
     return {
-      isHidden: false,
+      isHidden: true,
       links: ['collections', 'men', 'women', 'about', 'contact'],
     }
   },
   methods: {
-    toggleLinks: function () {
-      this.isHidden = !this.isHidden
+    handleSideLinks(value) {
+      this.isHidden = value
     },
   },
   components: {
     ShadedBackground,
     CartIcon,
+    NavBarLeftContainer,
+    NavBarSideLinks,
   },
 }
 </script>

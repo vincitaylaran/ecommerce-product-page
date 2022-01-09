@@ -17,64 +17,9 @@
     padding: 0 0 38px;
   }
 
-  .logo {
-    padding-bottom: 3px;
-  }
-
-  .menu {
-    @media (min-width: breakpoints.$breakpoint) {
-      display: none;
-    }
-  }
-
-  .left-container,
   .right-container {
     display: flex;
     align-items: center;
-  }
-
-  .left-container {
-    img:first-child {
-      margin-right: 16px;
-    }
-    .links {
-      @media (max-width: breakpoints.$breakpoint) {
-        display: none;
-      }
-      display: flex;
-      padding-left: 56px;
-      text-transform: capitalize;
-      height: 100%;
-      position: relative;
-      height: 100%;
-
-      li {
-        position: relative;
-        margin-right: 32px;
-      }
-
-      // Create underline for each link.
-      // Initialize it to be hidden.
-      .underline {
-        visibility: hidden;
-        min-height: 4px;
-        background: #ff7e1b;
-        position: absolute;
-        width: 100%;
-        top: 70px; // wtf? Where is this number coming from?
-      }
-      a {
-        text-decoration: none;
-        color: #69707d;
-      }
-      a:hover {
-        color: colors.$black;
-      }
-      // Show underline when hovering on link.
-      a:hover .underline {
-        visibility: visible;
-      }
-    }
   }
 
   .right-container {
@@ -100,28 +45,5 @@
 
   .hidden {
     display: none;
-  }
-
-  .side-links {
-    background: colors.$white;
-
-    position: absolute;
-    left: 0;
-    top: 0;
-    min-height: 100vh;
-    padding: 25px;
-    width: 250px;
-    color: colors.$black;
-    z-index: 2;
-
-    &__list {
-      padding-top: 54px;
-      li {
-        font-weight: 700;
-        text-transform: capitalize;
-        padding-bottom: 20px;
-        font-size: 1.125rem;
-      }
-    }
   }
 }
