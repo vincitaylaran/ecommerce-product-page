@@ -1,8 +1,10 @@
 @use '../scss/colors.scss';
+@use '../scss/breakpoints.scss';
 
 .cart-icon-container {
   display: flex;
   align-items: center;
+
   .cart-icon:hover {
     cursor: pointer;
     path {
@@ -13,14 +15,24 @@
     $horizontal-padding: 24px;
     $vertical-padding: 24px;
 
-    width: 96%;
     position: absolute;
+    border-radius: 10px;
     top: 76px;
+    width: 360px;
+    background: #fff;
+
+    // Centers the basket when viewing from mobile devices.
     left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
+    margin: 0 auto;
+
+    @media (min-width: breakpoints.$breakpoint) {
+      // Centers the basket relative to NavBarRightContainer.
+      // The NavBarRightContainer has relative position when viewing
+      // on desktop.
+      right: -50%;
+      left: initial;
+    }
 
     // Adds a subtle shadow effect.
     box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.5031);
@@ -38,8 +50,10 @@
       .item {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         margin-bottom: $vertical-padding;
         color: colors.$dark-grayish-blue;
+        width: 100%;
         .thumbnail {
           width: 50px;
           border-radius: 4px;
@@ -61,6 +75,7 @@
 
         .remove-item {
           height: 100%;
+          cursor: pointer;
         }
       }
     }
