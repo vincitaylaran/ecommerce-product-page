@@ -33,5 +33,10 @@
     &__items {
       padding: $vertical-padding $horizontal-padding $vertical-padding + 5px;
     }
+
+    .checkout {
+      width: 100%;
+      padding: 21px 120px;
+    }
   }
 }

@@ -19,14 +19,24 @@
       <h4 class="basket__title">Cart</h4>
       <div class="basket__items">
         <div class="item">
-          <img src="" alt="" />
-          <p class="title"></p>
-          <span class="price-quantity"></span>
-          <span class="total"></span>
-          <button class="remove-item"></button>
+          <img
+            class="thumbnail"
+            src="../../assets/image-product-1-thumbnail.jpg"
+            alt="image product thumbnail"
+          />
+          <p class="name">Fall Limited Edition Sneakers</p>
+          <span class="price-quantity">$125.00 x 3</span>
+          <span class="total">$375.00</span>
+          <img
+            class="remove-item"
+            src="../../assets/icon-delete.svg"
+            alt="remove icon"
+            @click="removeItem"
+          />
         </div>
+
+        <button class="checkout">Checkout</button>
       </div>
-      <button class="checkout"></button>
     </div>
   </div>
 </template>
@@ -37,6 +47,9 @@ export default {
   methods: {
     toggleCart() {
       console.log('yo')
+    },
+    removeItem(itemId) {
+      console.log('removed item:', itemId)
     },
   },
 }
