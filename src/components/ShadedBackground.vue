@@ -1,5 +1,5 @@
 <template>
-  <div id="shaded-bg" v-bind:class="{ hidden: isHidden }" />
+  <div id="shaded-bg" />
 </template>
 
 <script>
@@ -21,9 +21,5 @@ export default {
   top: 0;
   opacity: 0.75;
   z-index: 1;
-}
-
-.hidden {
-  display: none;
 }
 </style>

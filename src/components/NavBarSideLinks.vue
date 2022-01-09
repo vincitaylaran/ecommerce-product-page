@@ -1,6 +1,6 @@
 <template>
   <!-- This element is hidden when viewing from devices wider than mobile phones -->
-  <div class="side-links" v-bind:class="{ hidden: isHidden }">
+  <div class="side-links">
     <img
       v-on:click="toggleLinks"
       src="../../assets/icon-close.svg"

@@ -3,11 +3,11 @@
     <NavBarLeftContainer :links="links" @open-side-links="handleSideLinks" />
     <NavBarRightContainer />
     <NavBarSideLinks
-      :is-hidden="areSideLinksHidden"
+      v-if="areSideLinksHidden"
       :links="links"
       @close-side-links="handleSideLinks"
     />
-    <ShadedBackground :is-hidden="areSideLinksHidden" />
+    <ShadedBackground v-if="areSideLinksHidden" />
   </div>
 </template>
 
