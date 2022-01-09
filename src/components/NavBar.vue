@@ -3,11 +3,11 @@
     <NavBarLeftContainer :links="links" @open-side-links="handleSideLinks" />
     <NavBarRightContainer />
     <NavBarSideLinks
-      v-if="areSideLinksHidden"
+      v-if="isSideLinksVisible"
       :links="links"
       @close-side-links="handleSideLinks"
     />
-    <ShadedBackground v-if="areSideLinksHidden" />
+    <ShadedBackground v-if="isSideLinksVisible" />
   </div>
 </template>
 
@@ -21,13 +21,13 @@ export default {
   name: 'NavBar',
   data() {
     return {
-      areSideLinksHidden: true,
+      isSideLinksVisible: false,
       links: ['collections', 'men', 'women', 'about', 'contact'],
     }
   },
   methods: {
     handleSideLinks() {
-      this.areSideLinksHidden = !this.areSideLinksHidden
+      this.isSideLinksVisible = !this.isSideLinksVisible
     },
   },
   components: {
