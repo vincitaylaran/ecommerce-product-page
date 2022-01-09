@@ -1,8 +1,0 @@
-@use '../scss/colors.scss';
-
-.cart-icon:hover {
-  cursor: pointer;
-  path {
-    fill: colors.$black;
-  }
-}
