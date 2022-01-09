@@ -1,5 +1,5 @@
 <template>
-  <div id="the-layout">
+  <div id="app-layout">
     <NavBar />
     <slot />
   </div>
@@ -9,7 +9,7 @@
 import NavBar from './NavBar.vue'
 
 export default {
-  name: 'TheLayout',
+  name: 'AppLayout',
   components: {
     NavBar,
   },
@@ -19,7 +19,7 @@ export default {
 <style scoped lang="scss">
 @import '../scss/breakpoints.scss';
 
-#the-layout {
+#app-layout {
   padding: 28px 165px 132px;
   @media (max-width: $breakpoint) {
     padding: 0;
