@@ -89,6 +89,44 @@ const proudOfThisFunc = () => {
 // Solution: https://stackoverflow.com/questions/8625812/css-hover-border-makes-inline-elements-adjust-slightly
 ```
 
+Passing data from child component to parent component.
+https://michaelnthiessen.com/pass-function-as-prop/
+
+- Passing down functions from parent to child via props is considered an anti-pattern in Vue. The reason why you would want to do this (at least in React) is to pass data from child to parent. Instead, Vue encourages that you pass data from child to parent using the "$emit" function in the child.
+
+Getting data from child in React
+
+```jsx
+import React from 'react'
+
+function ParentComponent() {
+  function getValue(value) {
+    console.log('the value is:', value)
+  }
+
+  return <ChildComponent sendValue={getValue} />
+}
+
+function ChildComponent(props) {
+  // When child component executes, send the number 5 to parent.
+  if (props.sendValue) {
+    sendValue(5)
+  }
+
+  return <h1>Child</h1>
+}
+```
+
+Getting data from child in Vue
+
+```jsx
+// Example here....
+```
+
+## Centering an absolute positioned element
+
+https://stackoverflow.com/questions/1776915/how-can-i-center-an-absolutely-positioned-element-in-a-div
+
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
