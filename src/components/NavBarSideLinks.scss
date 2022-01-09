@@ -1,0 +1,28 @@
+@use '../scss/colors.scss';
+
+.hidden {
+  display: none;
+}
+
+.side-links {
+  background: colors.$white;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-height: 100vh;
+  padding: 25px;
+  width: 250px;
+  color: colors.$black;
+  z-index: 2;
+
+  &__list {
+    padding-top: 54px;
+    li {
+      font-weight: 700;
+      text-transform: capitalize;
+      padding-bottom: 20px;
+      font-size: 1.125rem;
+    }
+  }
+}
