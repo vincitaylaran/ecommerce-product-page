@@ -24,11 +24,10 @@ export default {
   name: 'NavBarLeftContainer',
   props: {
     links: Array,
-    isHidden: Boolean,
   },
   methods: {
     toggleLinks() {
-      this.$emit('open-side-links', false)
+      this.$emit('open-side-links')
     },
   },
 }

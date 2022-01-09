@@ -1,49 +1,40 @@
 <template>
   <div id="nav-bar">
-    <NavBarLeftContainer
-      :links="links"
-      :is-hidden="isHidden"
-      @open-side-links="handleSideLinks"
-    />
-
-    <div class="right-container">
-      <CartIcon />
-      <img class="avatar" src="../../assets/image-avatar.png" alt="avatar" />
-    </div>
-
+    <NavBarLeftContainer :links="links" @open-side-links="handleSideLinks" />
+    <NavBarRightContainer />
     <NavBarSideLinks
-      :is-hidden="isHidden"
+      :is-hidden="areSideLinksHidden"
       :links="links"
       @close-side-links="handleSideLinks"
     />
-    <ShadedBackground :is-hidden="isHidden" />
+    <ShadedBackground :is-hidden="areSideLinksHidden" />
   </div>
 </template>
 
 <script>
 import ShadedBackground from './ShadedBackground.vue'
-import CartIcon from './CartIcon.vue'
 import NavBarLeftContainer from './NavBarLeftContainer.vue'
+import NavBarRightContainer from './NavBarRightContainer.vue'
 import NavBarSideLinks from './NavBarSideLinks.vue'
 
 export default {
   name: 'NavBar',
   data() {
     return {
-      isHidden: true,
+      areSideLinksHidden: true,
       links: ['collections', 'men', 'women', 'about', 'contact'],
     }
   },
   methods: {
-    handleSideLinks(value) {
-      this.isHidden = value
+    handleSideLinks() {
+      this.areSideLinksHidden = !this.areSideLinksHidden
     },
   },
   components: {
     ShadedBackground,
-    CartIcon,
     NavBarLeftContainer,
     NavBarSideLinks,
+    NavBarRightContainer,
   },
 }
 </script>

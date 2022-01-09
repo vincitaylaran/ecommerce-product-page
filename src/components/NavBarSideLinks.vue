@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     toggleLinks() {
-      this.$emit('close-side-links', true)
+      this.$emit('close-side-links')
     },
   },
 }
