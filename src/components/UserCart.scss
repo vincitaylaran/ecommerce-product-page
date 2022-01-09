@@ -1,6 +1,8 @@
 @use '../scss/colors.scss';
 
 .cart-icon-container {
+  display: flex;
+  align-items: center;
   .cart-icon:hover {
     cursor: pointer;
     path {
@@ -12,13 +14,13 @@
     $vertical-padding: 24px;
 
     width: 96%;
-    min-height: 256px;
     position: absolute;
     top: 76px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
 
     // Adds a subtle shadow effect.
     box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.5031);
@@ -32,11 +34,49 @@
 
     &__items {
       padding: $vertical-padding $horizontal-padding $vertical-padding + 5px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        margin-bottom: $vertical-padding;
+        color: colors.$dark-grayish-blue;
+        .thumbnail {
+          width: 50px;
+          border-radius: 4px;
+        }
+
+        .info {
+          margin-left: 16px;
+          margin-right: 19px;
+          .name {
+            margin: 0;
+            margin-bottom: 5px;
+          }
+          .total {
+            font-weight: 700;
+            color: colors.$black;
+            padding-left: 6px;
+          }
+        }
+
+        .remove-item {
+          height: 100%;
+        }
+      }
     }
 
     .checkout {
       width: 100%;
       padding: 21px 120px;
+    }
+
+    &__empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 188px;
+      font-weight: 700;
+      color: colors.$dark-grayish-blue;
     }
   }
 }

@@ -15,18 +15,29 @@
       />
     </svg>
 
-    <div class="basket">
+    <div class="basket" v-if="isHidden">
       <h4 class="basket__title">Cart</h4>
-      <div class="basket__items">
-        <div class="item">
+      <div class="basket__items" v-if="items.length > 0">
+        <div class="item" v-for="item in items" :key="item.id">
           <img
             class="thumbnail"
-            src="../../assets/image-product-1-thumbnail.jpg"
+            :src="`${require('../../assets/' + item.thumbnail)}`"
             alt="image product thumbnail"
           />
-          <p class="name">Fall Limited Edition Sneakers</p>
-          <span class="price-quantity">$125.00 x 3</span>
-          <span class="total">$375.00</span>
+
+          <div class="info">
+            <p class="name">{{ item.name }}</p>
+            <span class="price-quantity"
+              >${{ parseFloat(item.basePrice).toFixed(2) }} x
+              {{ item.quantity }}</span
+            >
+            <span class="total"
+              >${{
+                parseFloat(item.basePrice * item.quantity).toFixed(2)
+              }}</span
+            >
+          </div>
+
           <img
             class="remove-item"
             src="../../assets/icon-delete.svg"
@@ -37,6 +48,7 @@
 
         <button class="checkout">Checkout</button>
       </div>
+      <div class="basket__empty" v-else>Your cart is empty.</div>
     </div>
   </div>
 </template>
@@ -46,11 +58,19 @@ export default {
   name: 'UserCart',
   methods: {
     toggleCart() {
-      console.log('yo')
+      this.isHidden = !this.isHidden
     },
-    removeItem(itemId) {
-      console.log('removed item:', itemId)
+    removeItem() {
+      console.error('<UserCart /> --> this function has not been implemented')
     },
+  },
+  props: {
+    items: Array,
+  },
+  data() {
+    return {
+      isHidden: false,
+    }
   },
 }
 </script>
