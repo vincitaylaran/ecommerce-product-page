@@ -50,5 +50,6 @@ button {
   color: $white;
   border-radius: 10px;
   font-size: 1rem;
+  cursor: pointer;
 }
 </style>
