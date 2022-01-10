@@ -1,20 +1,29 @@
 <template>
   <AppLayout>
-    <LightboxGallery />
+    <LightboxGallery :product="product" />
   </AppLayout>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import AppLayout from './components/AppLayout.vue'
 import LightboxGallery from './components/LightboxGallery.vue'
+import { Product } from './interfaces'
 
-export default {
+let product: Product = require('./data.json')
+
+export default defineComponent({
   name: 'App',
   components: {
     AppLayout,
     LightboxGallery,
   },
-}
+  data() {
+    return {
+      product,
+    }
+  },
+})
 </script>
 
 <style lang="scss">
