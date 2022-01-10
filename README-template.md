@@ -53,13 +53,13 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [Vue](https://v3.vuejs.org/) - JS library
+- [TypeScript](https://www.typescriptlang.org/) - JS library
+- [SCSS](https://sass-lang.com/documentation/syntax) - For styles
+- [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) - VS Code extension for syntax highlighting and error checking for TypeScript
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
