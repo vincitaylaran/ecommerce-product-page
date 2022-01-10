@@ -1,14 +1,18 @@
 <template>
-  <AppLayout> </AppLayout>
+  <AppLayout>
+    <LightboxGallery />
+  </AppLayout>
 </template>
 
 <script>
 import AppLayout from './components/AppLayout.vue'
+import LightboxGallery from './components/LightboxGallery.vue'
 
 export default {
   name: 'App',
   components: {
     AppLayout,
+    LightboxGallery,
   },
 }
 </script>
